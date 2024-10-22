@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="questions_array">
+        <item>The Serra de Tramuntana is the mountain range that runs along Mallorca\'s northwest coast.</item>
+        <item>The beach of Es Trenc is located in the northern part of Mallorca.</item>
+        <item>The Serra de Tramuntana is a UNESCO World Heritage site.</item>
+        <item>Spanish is the only official language of Mallorca.</item>
+        <item>The Cuevas del Drach, located on the east coast, are famous for their underground lake.</item>
+        <item>Mallorca is known for producing high-quality olive oil and almonds.</item>
+        <item>The town of Sóller is connected to Palma by a scenic train route.</item>
+        <item>Palma Cathedral, also known as La Seu, is a Gothic-style cathedral in Mallorca.</item>
+    </string-array>
+
+    <integer-array name="questions_answer">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+    </integer-array>
+</resources>
