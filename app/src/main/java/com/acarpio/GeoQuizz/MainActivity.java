@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
             Drawable drawable = getResources().getDrawable(R.drawable.score_background_green);
             scoreViews.get(currentIndex).setBackground(drawable);
             correctAnswersnum++;
-            correctAnswers.setText("Correct answers: " + correctAnswersnum + " / " + questionBank.length);;
+            correctAnswers.setText("Correct answers: " + correctAnswersnum + " / " + questionBank.length);
         } else {
             Drawable drawable = getResources().getDrawable(R.drawable.score_background_red);
             scoreViews.get(currentIndex).setBackground(drawable);
@@ -220,6 +220,7 @@ public class MainActivity extends AppCompatActivity {
     private void resetScore() {
         for (int i = 0; i < scoreViews.size(); i++) {
             scoreViews.get(i).setBackground(getResources().getDrawable(R.drawable.round_background_primary));
+
         }
     }
 
@@ -243,11 +244,17 @@ public class MainActivity extends AppCompatActivity {
                     countDownTime--;
                     seconds.setText("Time reamining: " + String.valueOf(countDownTime));
                     handler.postDelayed(this, 1000);
-                //Al terminar el contador hacer:
+                // Else, al terminar el contador hacer...
                 } else  {
+
                     currentIndex = 0;
                     backButton.setVisibility(View.VISIBLE);
                     backButton.setClickable(true);
+                    correctAnswersnum = 0;
+                    failedAnsersnum = 0;
+                    failedAnswers.setText("Failed answers: " + failedAnsersnum + " / " + questionBank.length);
+                    correctAnswers.setText("Correct answers: " + correctAnswersnum + " / " + questionBank.length);
+
                 }
             }
         };
