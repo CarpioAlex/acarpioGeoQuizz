@@ -1,6 +1,7 @@
 package com.acarpio.GeoQuizz;
 
 import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -34,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
     ImageView trueButton;
     ImageView falseButton;
     ArrayList<View> scoreViews;
+    TextView correctAnswers;
+    TextView failedAnswers;
+    int correctAnswersnum;
+    int failedAnsersnum;
     private static final String KEY_INDEX = "index";
 
 
@@ -65,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
         trueButton = findViewById(R.id.trueButton);
         falseButton = findViewById(R.id.falseButton);
         startTimer = findViewById(R.id.Crono);
+        correctAnswers = findViewById(R.id.correctAnswers);
+        failedAnswers = findViewById(R.id.failedAnswers);
+
         // Getting the questions array
         Resources res = getResources();
         String[] questionArray = res.getStringArray(R.array.questions_array);
@@ -81,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < scoreContainer.getChildCount(); i++) {
             scoreViews.add(scoreContainer.getChildAt(i));
         }
-
+        addBorderToTheScore();
 
 
         // Generating question objects
@@ -189,17 +197,34 @@ public class MainActivity extends AppCompatActivity {
 
     public void setScore(int trueAnswer) {
         if (trueAnswer == 1) {
-            scoreViews.get(currentIndex).setBackgroundColor(getResources().getColor(R.color.green));
+            Drawable drawable = getResources().getDrawable(R.drawable.score_background_green);
+            scoreViews.get(currentIndex).setBackground(drawable);
+            correctAnswersnum++;
+            correctAnswers.setText("Correct answers: " + correctAnswersnum + " / " + questionBank.length);;
         } else {
-            scoreViews.get(currentIndex).setBackgroundColor(getResources().getColor(R.color.red));
+            Drawable drawable = getResources().getDrawable(R.drawable.score_background_red);
+            scoreViews.get(currentIndex).setBackground(drawable);
+            failedAnsersnum++;
+            failedAnswers.setText("Failed answers: " + failedAnsersnum + " / " + questionBank.length);
         }
     }
 
-    private void resetScore() {
-        for (int i = 0; i < scoreViews.size(); i++) {
-            scoreViews.get(i).setBackgroundColor(getResources().getColor(R.color.white));
+    public void addBorderToTheScore() {
+        Drawable borde = getResources().getDrawable(R.drawable.round_background_primary);
+        for (View cuadrado : scoreViews) {
+            cuadrado.setBackground(borde);
         }
     }
+
+
+    private void resetScore() {
+        for (int i = 0; i < scoreViews.size(); i++) {
+            scoreViews.get(i).setBackground(getResources().getDrawable(R.drawable.round_background_primary));
+        }
+    }
+
+
+
 
 
     private void startCountdown() {
@@ -221,7 +246,6 @@ public class MainActivity extends AppCompatActivity {
                 //Al terminar el contador hacer:
                 } else  {
                     currentIndex = 0;
-                    noMoreAnswers();
                     backButton.setVisibility(View.VISIBLE);
                     backButton.setClickable(true);
                 }
