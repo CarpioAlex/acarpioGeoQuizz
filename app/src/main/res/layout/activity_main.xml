@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="?attr/colorSurfaceContainerHigh"
+    android:backgroundTintMode="multiply"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="335dp"
+        android:layout_height="290dp"
+        android:background="@drawable/round_background_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.927">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="?attr/colorPrimary"
+            android:text="@string/back_button"
+            android:textColor="?attr/colorOnPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.209"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="?attr/colorPrimary"
+            android:text="@string/next_button"
+            android:textColor="?attr/colorOnPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.79"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/trueButton"
+            android:layout_width="37dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="59dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.748"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/nextButton"
+            app:layout_constraintVertical_bias="0.416"
+            app:srcCompat="@drawable/reshot_icon_check_x2ds7cazte_8de3c" />
+
+        <ImageView
+            android:id="@+id/falseButton"
+            android:layout_width="52dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="52dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/backButton"
+            app:layout_constraintVertical_bias="0.447"
+            app:srcCompat="@drawable/reshot_icon_cross_mxnyhbqdsr" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/questionView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/round_background_primary"
+
+        android:padding="48px"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/buttonContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.949" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="344dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="138dp"
+        android:background="@drawable/round_background_tertiary"
+        app:layout_constraintBottom_toTopOf="@+id/questionView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_text"
+            android:textColor="?attr/colorOnSecondaryContainer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/scoreContainer"
+        android:layout_width="316dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="79dp"
+        app:layout_constraintBottom_toTopOf="@+id/questionView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout">
+
+        <View
+            android:id="@+id/question1"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            app:layout_column="1"
+            app:layout_row="0" />
+
+        <View
+            android:id="@+id/question2"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            app:layout_column="2"
+            app:layout_row="0" />
+
+        <View
+            android:id="@+id/question3"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            app:layout_column="3"
+            app:layout_row="0" />
+
+        <View
+            android:id="@+id/question4"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            app:layout_column="4"
+            app:layout_row="0" />
+
+        <View
+            android:id="@+id/question5"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            app:layout_column="5"
+            app:layout_row="0" />
+
+        <View
+            android:id="@+id/question6"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            app:layout_column="6"
+            app:layout_row="0" />
+
+        <View
+            android:id="@+id/question7"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            app:layout_column="7"
+            app:layout_row="0" />
+
+        <View
+            android:id="@+id/question8"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            app:layout_column="8"
+            app:layout_row="0" />
+    </androidx.gridlayout.widget.GridLayout>
+
+    <Button
+        android:id="@+id/Crono"
+        android:layout_width="93dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="17dp"
+        android:text="Timer"
+        app:layout_constraintBottom_toTopOf="@+id/scoreContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <TextView
+        android:id="@+id/seconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="29dp"
+        app:layout_constraintBottom_toTopOf="@+id/scoreContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="@+id/Crono"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

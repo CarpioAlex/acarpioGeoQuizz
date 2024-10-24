@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">acarpioGeoQuizz</string>
+
+    <string name="true_button">True</string>
+    <string name="false_button">False</string>
+    <string name="next_button">Next</string>
+    <string name="back_button">Back</string>
+    <string name="correct_toast">Correct!</string>
+    <string name="incorrect_toast">Wrong answer!</string>
+    <string name="welcome_text">Welcome to the Mallorca Quizz!</string>
+
+</resources>
